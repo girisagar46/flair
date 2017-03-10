@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flair</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#flair_top').DataTable({
+                "paging": false,
+            });
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">FLAIR</a>
+    </div>
+{#    <ul class="nav navbar-nav">#}
+{#      <li class="active"><a href="#">Home</a></li>#}
+{#      <li><a href="#">Page 1</a></li>#}
+{#      <li><a href="#">Page 2</a></li>#}
+{#      <li><a href="#">Page 3</a></li>#}
+{#    </ul>#}
+  </div>
+</nav>
+
+<div class="container">
+    <table id="flair_top">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll No.</th>
+            <th>Title</th>
+            <th>Abstract</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for each in data %}
+            <tr>
+                <td>{{ each['Name'] }}</td>
+                <td>{{ each['Roll No.'] }}</td>
+                <td>{{ each['Title'] }}</td>
+                {# <td>{{ each['Abstract'] }}</td> #}
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">View Abstract</button></td>
+
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Abstract</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{ each['Abstract'] }}</p>
+                                <p><a href="#" target="_blank" class="btn btn-sm">View paper</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
