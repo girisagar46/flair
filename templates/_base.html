@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>flair</title>
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript" charset="utf8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% block script %}
+            <script type="text/javascript">
+                $(document).ready( function () {
+                    $('#flair_top').DataTable({
+                        "paging": false,
+                        "ordering": false,
+                    });
+                });
+        </script>
+        {% endblock %}
+
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">FLAIR</a>
+        </div>
+    </div>
+</nav>
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+    {% endblock %}
+</div>
+</body>
+</html>
