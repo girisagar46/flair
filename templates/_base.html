@@ -3,11 +3,14 @@
 <head>
     {% block head %}
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>flair</title>
         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
         <script type="text/javascript" charset="utf8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
@@ -20,8 +23,18 @@
                         "ordering": false,
                     });
                 });
-        </script>
+            </script>
         {% endblock %}
+        <style type="text/css">
+            .navbar-brand {
+                position: relative;
+                background: url('/static/logo.png');
+                width: 140px;
+                left: 15px;
+                max-height: 70px;
+                background-size: contain;
+            }
+        </style>
 
     {% endblock %}
 </head>
@@ -29,7 +42,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">FLAIR</a>
+            <a class="navbar-brand" href="/"></a>
         </div>
     </div>
 </nav>

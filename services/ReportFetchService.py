@@ -3,7 +3,7 @@ import os
 def fetch_files(name_arg):
     r = requests.get("https://api.github.com/repos/CSIT-GUIDE/FYP-2016/contents")
     payload_json = r.json()
-    name, htmlurl = ("","")
+    name, htmlurl,download_url = ("", "", "")
     for each in payload_json:
         temp_name = each.get('name').split('_')
         if name_arg in temp_name:
