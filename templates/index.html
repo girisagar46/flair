@@ -21,7 +21,7 @@
                 <td>{{ each['Roll No.'] }}</td>
                 <td>{{ each['Title'] }}</td>
                 <td>{{ each['Abstract'] }}</td>
-                <td><a class="btn btn-success" href="{{ url_for('view_content',name = each['Name']) }}">View Paper</a></td>
+                <td><a class="btn btn-success" href="{{ url_for('view_content',roll = each['Roll No.']) }}">View Paper</a></td>
             </tr>
         {% endfor %}
         </tbody>

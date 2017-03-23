@@ -24,9 +24,9 @@ def index():
     return render_template("index.html", data = dList)
 
 
-@app.route('/view/<name>')
-def view_content(name):
-    report_data = RFS.fetch_files(name.split(' ')[0])
+@app.route('/view/<roll>')
+def view_content(roll):
+    report_data = RFS.fetch_files(roll.split('&'))
     return render_template('details.html', data=report_data)
 
 if __name__ == '__main__':
