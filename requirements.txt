@@ -4,5 +4,5 @@ gunicorn==19.7.0
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==1.0
-requests==2.13.0
+requests==2.19.1
 Werkzeug==0.12
