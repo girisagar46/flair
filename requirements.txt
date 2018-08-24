@@ -5,4 +5,4 @@ itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==1.0
 requests==2.13.0
-Werkzeug==0.12
+Werkzeug==0.14.1
